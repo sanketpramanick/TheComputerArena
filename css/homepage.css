@@ -1,0 +1,141 @@
+/* 
+    Created on : 23 Sep, 2018, 5:28:36 PM
+    Author     : sanke
+*/
+body,html{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../res/background.jpg");
+    overflow: auto;
+    height: 100%;
+    max-height: 100%;
+}
+
+#logo{
+    background-color: dimgrey;
+    background-size: auto;
+    text-align: center;
+    padding-bottom: 0.2em;
+}
+
+#form{
+    padding-top: 1em;
+    text-align: center;
+}
+
+#tagline{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 2em;
+}
+
+.button{
+    background-color: #e6ac00;
+    border: none;
+    color: black;
+    border-radius: 0.25em;
+    width: 10em;
+    font-family: fantasy;
+    padding: 0.2em 0.2em;
+    text-align: center;
+    display: inline-block;
+    font-size: 2em;
+    margin: 1em;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: black;
+    color: #e6ac00;
+}
+
+.fbutton{
+    background-color: #e6ac00;
+    border: none;
+    color: black;
+    border-radius: 0.25em;
+    width: 7em;
+    font-family: fantasy;
+    padding: 0.2em 0.2em;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0.4em;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.fbutton:hover{
+    background-color: black;
+    color: #e6ac00;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 2%;
+}
+
+.container {
+    position: fixed;
+    z-index: 1;
+    top: 10%;
+    left: 25%;
+    border: 0.01em groove grey;
+    border-left: 0.5em solid goldenrod;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 50%;
+    height: 75%;
+    background-color: #f1f1f1;
+}
+
+.container2 {
+    position: fixed;
+    z-index: 1;
+    top: 25%;
+    left: 30%;
+    border: 0.01em groove grey;
+    border-left: 0.5em solid goldenrod;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 40%;
+    height: 40%;
+    background-color: #f1f1f1;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 0.06em solid #888;
+    width: 80%; 
+}
+
+.close {
+    position: absolute;
+    right: 1.6em;
+    top: 0;
+    color: #000;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 0.2em;
+    text-align: left;
+    border-spacing: 0.2em;
+}

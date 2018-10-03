@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Computer Arena</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/homepage.css">
+    </head>
+    <body>
+        <div id="logo">
+            <img src="res/logo.png" alt="logo" width=750 height=350>
+            <p id="tagline">The One Stop Computer Shop</p>
+        </div>
+        <form id="form" name="form" method="POST">
+            <div>
+                <button onclick="document.getElementById('id01').style.display='block'" class="button">Register</button>
+                <button onclick="document.getElementById('id02').style.display='block'" class="button">Login</button>
+            </div>
+            <div id="id01" class="modal">
+                    <div class="container">
+                        <table style="margin-left: 1em;">
+                            <caption><h2>Registration</h2></caption>
+                            <tr>
+                                <td>
+                                    <table style="font-size: 1.2em;">
+                                        <tr>
+                                            <td><label><b>Name*</b></label></td>
+                                            <td><input type="text" placeholder="Enter Name" name="name" id ="name" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Username*</b></label></td>
+                                            <td><input type="email" placeholder="Enter E-mail" name="user" id="user" onBlur="checkAvailability()" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Password*</b></label></td>
+                                            <td><input type="password" placeholder="Enter a Password" name="pass" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Confirm Password*</b></label></td>
+                                            <td><input type="password" placeholder="Re-type the Password" name="cpass" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Gender</b></label></td>
+                                            <td><input type="radio" name="gender" value="male">Male
+                                                <input type="radio" name="gender" value="female">Female
+                                                <input type="radio" name="gender" value="others">Others
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Date of Birth</b></label></td>
+                                            <td><input type="date" name="dob" max="2000-01-02" min="1979-12-31"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Registration Type</b></label></td>
+                                            <td><select name="rtype">
+                                                    <option value="Customer">Customer</option>
+                                                    <option value="Supplier">Supplier</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Mobile Number</b></label></td>
+                                            <td><input type="number" name="mno" placeholder="Enter Mob No" min="1000000000" max="9999999999"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Address</b></label></td>
+                                            <td><textarea placeholder="Enter Billing/Shipping Address" name="add" cols="40" rows="3"></textarea></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="text-align: center; vertical-align: bottom;">
+                                    <p>
+                                        <img  id="loaderIcon" style="display:none;" src="res/loader.gif" height="70%" width="70%" >
+                                        <img id="statusIconWrong" style="display:none;" src="res/wrong.png" height="50%" width="50%" >
+                                        <img id="statusIconRight" style="display:none;" src="res/right.png" height="60%" width="60%" >
+                                        <br><span style="font-size: 1.2em;" id="user-availability-status"></span>
+                                     </p>
+                                    <button type="button" class="fbutton" onclick="validateReg()">Submit</button>
+                                    <button type="reset" class="fbutton">Reset</button>
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="fbutton">Cancel</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            <div id="id02" class="modal">
+                    <div class="container2">
+                        <table style="margin-left: 1em;">
+                            <caption><h2>Login</h2></caption>
+                            <tr>
+                                <td>
+                                    <table style="font-size: 1.2em;">
+                                        <tr>
+                                            <td><label><b>Username</b></label></td>
+                                            <td><input type="text" placeholder="Enter Username" name="uname" required></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label><b>Password</b></label></td>
+                                            <td><input type="password" placeholder="Enter Password" name="psw" required></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="text-align: center; vertical-align: bottom;">
+                                    <button type="button" class="fbutton" onclick="validateLogin()">Login</button>
+                                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="fbutton">Cancel</button>
+                                </td>
+                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;">
+                                        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label><br>
+                                        <label>Forgot <a href="#">password?</a></label>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+        </form>
+        <script type="text/javascript">
+            var modal1 = document.getElementById('id01');
+            var modal2 = document.getElementById('id02');
+            window.onclick = function(event) {
+                if (event.target == modal1) {
+                    modal1.style.display = "none";
+                }
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            };
+        </script>
+        <script type="text/javascript" src="js/registration.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/username.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    </body>
+</html>
